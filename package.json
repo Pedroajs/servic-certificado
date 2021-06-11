@@ -1,0 +1,22 @@
+{
+  "name": "servico-certificado",
+  "version": "1.0.0",
+  "description": "servico de geracao de certificados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pedroajs/servic-certificado.git"
+  },
+  "author": "Pedro Augusto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pedroajs/servic-certificado/issues"
+  },
+  "homepage": "https://github.com/Pedroajs/servic-certificado#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
