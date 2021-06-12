@@ -1,11 +1,29 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/',(request, response, next)=>{
+const dados = [];
+
+
+router.get('/',(request, response, next)=>{
     response.status(200).send({
-        mensagem: 'recebendo dados pelo método POST'
+        mensagem: 'Acessando a rota tipo GET'
     });
-    
 });
 
-module.exports = router;
+
+
+router.post('/',(request, response, next)=>{
+    const { nome, data } = request.body;
+    const dado = {
+        nome,
+        data
+    };
+    
+    dados.push(dado);
+    
+    response.status(201).json(dado);
+
+});
+
+
+module.exports = router, dados;

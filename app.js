@@ -3,6 +3,9 @@ const app = express();
 
 const rotaCertificado = require('./routes/certificado')
 
+
+
+app.use(express.json());
 app.use('/certificado', rotaCertificado)
 
 app.use('/teste', (request, response, next)=>{
