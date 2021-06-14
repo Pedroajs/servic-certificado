@@ -3,7 +3,6 @@ const app = express();
 // const modulo = require('./routes/certificado')
 
 const handlebars = require('express-handlebars');
-
 const dados = [];
 
 app.engine('handlebars', handlebars({defaultLayout:'main'}));
@@ -13,13 +12,13 @@ app.use(express.json());
 // app.use('/certificado', modulo);
 
 app.get('/certificado', (request, response) => {
-    response.render('certificado', {dados});
+    response.status(200).send('recebido')
+    response.render('certificado', {dados})
 
 });
 
 
 app.post('/certificado',(request, response, next)=>{
-
     const { nome, data } = request.body;
     const dado = {
         nome: nome,
@@ -29,7 +28,8 @@ app.post('/certificado',(request, response, next)=>{
     dados.push(dado);
     
     response.status(200).json(dado);
-    // console.log(request.body)
+    console.log(dados)
+
 });
 
 
@@ -38,7 +38,5 @@ app.use('/teste', (request, response, next)=>{
         mensagem: 'Deu certo!'
     });
 });
-
-console.log(dados)
 
 module.exports = app;
